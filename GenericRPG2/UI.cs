@@ -20,7 +20,31 @@ namespace GenericRPG2
             return Console.ReadLine();
         }
 
+        internal int showMenu()
+        {
+            Console.WriteLine("'''''''''''''''''''''''''''This is a menu'''''''''''''''''''''''''''''''");
+            Console.WriteLine("'''''''''''''''''''''''''''Press 1 to enter the Syntax''''''''''''''''''");
+            Console.WriteLine("'''''''''''''''''''''''''''Press 2 to exit the application''''''''''''''");
+            Console.WriteLine("'''''''''''''''''''''''''''Press 3 for blue pill''''''''''''''''''''''''");
+            Console.WriteLine("'''''''''''''''''''''''''''Press 4 for red pill'''''''''''''''''''''''''");
+            Console.WriteLine("''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''");
 
+
+            return checkInput(Console.ReadLine(), 3);
+        }
+
+        private int checkInput(string userInput, int nmbrOfMenuItems)
+        {
+            int i;
+
+            int.TryParse(userInput, out i);
+
+            if (i > 0 && i <= nmbrOfMenuItems)
+            {
+                return i;
+            }
+            else return -1;
+        }
 
 
 

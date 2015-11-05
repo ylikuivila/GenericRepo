@@ -10,13 +10,23 @@ namespace GenericRPG2
     {
         internal void start()
         {
+            UI myUI = new UI();
+            Month currentMonth = Month.November;
+            Month prevMonth = currentMonth - 1;
+            Month month = (Month)17;
+
             Hero h = new Hero();
             Weapon w = new Weapon();
+
+
             // Weapon w2 = new Weapon();
 
             Shield s = new Shield();
-            Month currentMonth = Month.November;
+
             Monster m = new Monster();
+
+            myUI.showText(month.ToString());
+
 
             // w2.setName("Human slayer");
             // w2.setDamage(20);
@@ -45,7 +55,7 @@ namespace GenericRPG2
 
             w.SetDamage(0);
             w.SetName("This ain't no weapon!");
-
+        }
 
             enum Month {January, February, March, April, May, June, July, August, September, October, November, December};
 	//{
@@ -54,4 +64,3 @@ namespace GenericRPG2
 
         }
     }
-}
